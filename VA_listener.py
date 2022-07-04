@@ -10,5 +10,3 @@ def listener():
 
         except:
             return "None"
-        
-
