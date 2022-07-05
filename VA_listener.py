@@ -4,7 +4,7 @@ def listener():
     with sr.Microphone() as device:
         try:
             record = sr.Recognizer().listen(device)
-            string_data = sr.Recognizer.recognize_google(record)
+            string_data = sr.Recognizer().recognize_google(record)
 
             return string_data
 

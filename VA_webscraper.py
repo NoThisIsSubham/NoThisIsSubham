@@ -5,7 +5,9 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.expected_conditions import presence_of_element_located
 
-def webdriver(platform_name, search_query):
+
+
+def webscraper(search_query, platform_name):
     edge_options = Options()
     edge_options.add_experimental_option("detach", True)
     
@@ -23,17 +25,14 @@ def webdriver(platform_name, search_query):
             complete_search = platform_url[platform_name][0] + search_query.replace(" ", "%20")
             driver.get(complete_search)
 
-            for i in range(len(platform_url[platform_name])-1):
+            for i in range(1, len(platform_url[platform_name])-1):
                 try:
-                    element = WebDriverWait(driver, 30).until(presence_of_element_located((By.XPATH, platform_url[platform_name][i+1])))
+                    element = WebDriverWait(driver, 10).until(presence_of_element_located((By.XPATH, platform_url[platform_name][i])))
                     clicker.click(element)
                     clicker.perform()
                 except: 
                     pass
             break
 
-    
-
-    
-
+webscraper("sorry lyrics", "youtube")
 
