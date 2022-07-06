@@ -12,7 +12,7 @@ def webscraper(search_query, platform_name):
     edge_options.add_experimental_option("detach", True)
     
     driver = Edge("edgedriver_win64\msedgedriver.exe", options=edge_options)
-    
+
     platform_url = {"youtube":["https://www.youtube.com/results?search_query=", "/html/body/ytd-app/div[1]/ytd-page-manager/ytd-search/div[1]/ytd-two-column-search-results-renderer/div/ytd-section-list-renderer/div[2]/ytd-item-section-renderer/div[3]/ytd-video-renderer[1]/div[1]/ytd-thumbnail/a/yt-img-shadow/img", """//*[@id="skip-button:5"]/span/button"""],
     "zee5": ["https://www.zee5.com/search?q=", "/html/body/div[1]/div/div/div[2]/div[3]/div/div[4]/div/div/div[1]/div/div/div[1]/div/h3/a", ""],
     "hotstar":["https://www.hotstar.com/in/search?q=", "/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div[2]/div[1]/div/div/article/a/div[2]/div[2]", "/html/body/div[1]/div/div/div[1]/div[2]/div[2]/div/div/div/div/div[1]/div/div/div/div[2]/div/div/div/div[2]/div/div/div/a/article/div[1]/div/img"]}
@@ -33,6 +33,4 @@ def webscraper(search_query, platform_name):
                 except: 
                     pass
             break
-
-webscraper("sorry lyrics", "youtube")
-
+    
