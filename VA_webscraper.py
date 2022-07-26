@@ -44,10 +44,9 @@ def webscraper(search_query, platform_name="youtube"):
                 except:
                     Create_driver_session()       
                     driver.get(complete_search)
-
+            clicker = ActionChains(driver=driver)
             for i in range(1, len(platform_url[platform_name])-1):
                 try:
-                    clicker = ActionChains(driver=driver)
                     element = WebDriverWait(driver, 10).until(presence_of_element_located((By.XPATH, platform_url[platform_name][i])))
                     clicker.click(element)
                     clicker.perform()
